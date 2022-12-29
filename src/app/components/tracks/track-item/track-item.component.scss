@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  form {
+    display: flex;
+    justify-content: center;
+    border-style: outset;
+    min-width: 400px;
+    margin: 20px;
+
+    mat-form-field {
+      display: flex;
+      width: 100%;
+
+      ::ng-deep .mat-form-field-wrapper {
+        width: 100%;
+      }
+
+      margin-bottom: 16px;
+    }
+
+    mat-label{
+      color: gray;
+    }
+    button {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+  input{
+    border-style: inset;
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,30 @@
+<div>
+  <button mat-flat-button routerLink="/track/item">
+    <span>Add User</span>
+  </button>
+</div>
+
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Genre</th>
+      <th>Search</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let itemTrack of tracksList">
+      <td>{{itemTrack.id}}</td>
+      <td>{{itemTrack.name}}</td>
+      <td>{{itemTrack.genre}}</td>
+      <td>
+        <a href = "https://www.google.com/search?q={{itemTrack.name}}">Search in YouTube</a>
+      </td>
+      <td><button (click)="delete(itemTrack.id)">Delete</button></td>
+      <td><button [routerLink]="['/users/item', itemTrack.id]">Update</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

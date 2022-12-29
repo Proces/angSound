@@ -1,0 +1,20 @@
+<form [formGroup]="formGroup" (ngSubmit)="save()">
+  <div>
+    <h2>{{track?.id? 'Update' : 'Create'}} track</h2>
+
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" formControlName="name">
+      <mat-error *ngIf="formGroup.controls['name'].errors?.['required']">Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Genre</mat-label>
+      <input matInput placeholder="Genre" formControlName="genre">
+      <mat-error *ngIf="formGroup.controls['genre'].errors?.['required']">Genre is required</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </div>
+
+</form>
